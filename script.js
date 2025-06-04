@@ -1,5 +1,5 @@
 // 全域變數
-let players =; // 儲存 YT.Player 物件的陣列
+let players = []; // 正確初始化為空陣列
 let currentActiveIndex = 0; // 當前活動影片的索引
 let carouselInterval; // 輪播計時器的 ID
 const rotationDuration = 10000; // 輪播間隔時間 (10秒)
