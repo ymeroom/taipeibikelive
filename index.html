@@ -1,49 +1,34 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <title>台北環騎即時影像</title>
-  <style>
-    body {
-      margin: 0;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-      gap: 5px;
-      height: 100vh;
-      background-color: black;
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台北環騎路線直播監控</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <iframe id="liveFrame" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+    <header>
+        <h1>台北環騎路線直播監控中心</h1>
+        <p>自動輪播台北環騎路線各點直播，每10秒切換一次。</p>
+    </header>
 
-<script>
-const urls = [
-  "https://www.youtube.com/embed/z_fY1pj1VBw?autoplay=1&mute=1",
-  "https://www.youtube.com/embed/215ahZ_0rTg?autoplay=1&mute=1",
-  "https://www.youtube.com/embed/fP4ecxfsJos?autoplay=1&mute=1",
-  "https://www.youtube.com/watch?v=34h_Cy_n0Ok?autoplay=1&mute=1",
-  "https://www.youtube.com/watch?v=Ndo_8RuefH4?autoplay=1&mute=1",
-  "https://www.youtube.com/watch?v=uvwfYzwY8tg?autoplay=1&mute=1",
-  "https://www.youtube.com/watch?v=KgYGffqDFzo?autoplay=1&mute=1",
-  "https://www.youtube.com/watch?v=C-tJGejyFE0?autoplay=1&mute=1"
-];
+    <main class="carousel-container">
+        <div id="player-1" class="video-player" data-video-id="z_fY1pj1VBw"></div>
+        <div id="player-2" class="video-player" data-video-id="215ahZ_0rTg"></div>
+        <div id="player-3" class="video-player" data-video-id="fP4ecxfsJos"></div>
+        <div id="player-4" class="video-player" data-video-id="lM2pZZf8Kag"></div>
+        <div id="player-5" class="video-player" data-video-id="Ndo_8RuefH4"></div>
+        <div id="player-6" class="video-player" data-video-id="34h_Cy_n0Ok"></div>
+        <div id="player-7" class="video-player" data-video-id="iwxG87VC0do"></div>
+        <div id="player-8" class="video-player" data-video-id="C-tJGejyFE0"></div>
+        <div id="player-9" class="video-player" data-video-id="KJj2ixQx2k4"></div>
+    </main>
 
-let index = 0;
-function rotateStream() {
-  document.getElementById("liveFrame").src = urls[index];
-  index = (index + 1) % urls.length;
-}
+    <footer>
+        <p>&copy; 2024 台北環騎路線直播監控</p>
+    </footer>
 
-rotateStream();
-setInterval(rotateStream, 10000); // 每10秒換一次
-</script>
-
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
 </body>
 </html>
