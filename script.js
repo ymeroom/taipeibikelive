@@ -110,6 +110,7 @@ function startCarousel() {
 function stopCarousel() {
     clearInterval(carouselInterval);
 }
+window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
 
 // 可選：新增手動控制按鈕 (如果需要)
 // 例如，在 HTML 中添加 <button onclick="nextVideo()">下一個</button>
